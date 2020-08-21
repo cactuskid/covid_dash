@@ -1,7 +1,6 @@
 wget
 pandas
 numpy
-coulour
 dash
 dash_bio
 dash_html_components

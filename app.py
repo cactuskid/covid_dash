@@ -26,8 +26,6 @@ import requests
 import glob
 import time
 
-from colour import Color
-
 import pandas as pd
 #collapse codons
 #use tblastn to map to prot
