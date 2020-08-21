@@ -585,4 +585,4 @@ def selout(selected_atom_ids, model_data):
     return html.Div( residue_summary )
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug = True )
