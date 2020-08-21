@@ -87,8 +87,15 @@ def files_data_style(content):
 
 # Create the model data from the decoded contents
 fname = structs[list(structs.keys())[3]]
+
+with open( 'tmp.pdb' , 'w' ) as tempfile:
+    tempfile.write('blah')
+
 modata = parser.create_data(fname)
 fmodel = files_data_style(modata)
+
+
+
 with open(fmodel) as fm:
     mdata = json.load(fm)
 
