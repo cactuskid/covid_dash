@@ -1,7 +1,5 @@
-import six.moves.urllib.request as urlreq
-from six import PY3
-import json
 
+import json
 
 import dash
 import dash_bio as dashbio
@@ -18,19 +16,14 @@ import pandas as pd
 from itertools import combinations
 
 import numpy as np
-
-
 import os
 import wget
-import requests
 import glob
 import time
 
 import pandas as pd
 #collapse codons
 #use tblastn to map to prot
-
-import base64
 import tempfile
 
 from shutil import copy2
@@ -61,8 +54,6 @@ dl_url = 'http://files.rcsb.org/download/'
 dl_url_err = 'http://files.rcsb.org/download/'
 structs = {}
 already = glob.glob( './templates/*.pdb' )
-print(already)
-#pull complexes
 
 for m in models:
     structfile = './templates/'+m.upper().strip()+'.pdb'
