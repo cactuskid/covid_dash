@@ -1,0 +1,15 @@
+wget
+pandas
+numpy
+coulour
+dash
+dash_bio
+dash_html_components
+dash_core_components
+dash_daq
+six
+json
+dash_bio_utils
+textwrap
+shutil
+base64
