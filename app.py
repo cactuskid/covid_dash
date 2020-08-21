@@ -16,7 +16,6 @@ from itertools import combinations
 import numpy as np
 import os
 
-import tempfile
 
 import wget
 import glob
@@ -91,8 +90,8 @@ def files_data_style(content):
 # Create the model data from the decoded contents
 fname = structs[list(structs.keys())[3]]
 
-with open( 'tmp.pdb' , 'w' ) as tempfile:
-    tempfile.write('blah')
+with open( 'tmp.pdb' , 'w' ) as tempfileout:
+    tempfileout.write('blah')
 
 modata = parser.create_data(fname)
 fmodel = files_data_style(modata)
@@ -546,8 +545,8 @@ def use_upload( selection , demostr, mol_style, color_style, mt, custom_colors  
     fname = './str.pdb'
     # Create the model data from the decoded contents
 
-    with open( 'tmp.pdb' , 'w' ) as tempfile:
-        tempfile.write('blah')
+    with open( 'tmp.pdb' , 'w' ) as tempfileout:
+        tempfileout.write('blah')
 
     print(custom_colors)
     modata = parser.create_data(fname)
