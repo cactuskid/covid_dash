@@ -8,3 +8,4 @@ dash_core_components
 dash_daq
 six
 dash_bio_utils
+gunicorn
