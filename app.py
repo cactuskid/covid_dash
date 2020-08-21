@@ -15,6 +15,9 @@ from itertools import combinations
 
 import numpy as np
 import os
+
+import tempfile
+
 import wget
 import glob
 import time
