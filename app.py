@@ -116,7 +116,9 @@ for key in circos_graph_data:
         circosfinal[key] = circos_graph_data[key]
 circos_graph_data = circosfinal
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets )
+
+server = app.server
 
 data_info = { os.path.abspath( structs[s])  : {
         'name': 'covid prot'+str(i),
