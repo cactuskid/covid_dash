@@ -1,6 +1,5 @@
 
 import json
-
 import dash
 import dash_bio as dashbio
 import dash_html_components as html
@@ -10,7 +9,6 @@ from dash.dependencies import Input, Output, State
 import dash_daq as daq
 from dash_bio_utils import pdb_parser as parser, styles_parser as sparser
 import dash_bio
-
 
 import pandas as pd
 from itertools import combinations
@@ -22,21 +20,17 @@ import glob
 import time
 
 import pandas as pd
-#collapse codons
-#use tblastn to map to prot
 import tempfile
-
 from shutil import copy2
 from textwrap import dedent as s
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-with open( ''  , 'r') as circosin :
-    circos_graph_data = json.loads( circosin.read('circoslayout.json') )
+with open( './circoslayout.json'  , 'r') as circosin :
+    circos_graph_data = json.loads( circosin.read() , parse_int=int )
 
-clusterdf = pd.read_csv( '')
-
+clusterdf = pd.read_csv( './gisaid_hcov-2020_07_30.QC.NSoutlier.filter.deMaiomask.EPIID.HF.noambig.aln_codon_clustersclusterpositions_columns.csv')
 
 
 models = '5x58,6cs0,6sc1,6nb6, 2jw8, 2xab, 4aud1, 1yo4, 2acf, 2wct, 3vc8, 2gt7, 3ee7, 2g9t, 3ee7, 2g9t, 6jyt, 1ysy, 6nur, 2g9t, 5c8u, 2g9t, 2xyq, 4mm3, 6cs2, 6acg, 6acj, 6ack, 2dd8, 2ghw, 6nb6, 6nb7'
@@ -113,7 +107,14 @@ for atom_id in mdata['atoms']:
     if int(atom_id['serial'])>maxserial :
         maxserial = int(atom_id['serial'])
 
-
+circosfinal = {}
+for key in circos_graph_data:
+    try:
+        int(key)
+        circosfinal[int(key)] = circos_graph_data[key]
+    except:
+        circosfinal[key] = circos_graph_data[key]
+circos_graph_data = circosfinal
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
