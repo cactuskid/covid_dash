@@ -88,9 +88,6 @@ def files_data_style(content):
 # Create the model data from the decoded contents
 fname = structs[list(structs.keys())[3]]
 
-with open( 'tmp.pdb' , 'w' ) as tempfileout:
-    tempfileout.write('blah')
-
 modata = parser.create_data(fname)
 fmodel = files_data_style(modata)
 
@@ -538,7 +535,6 @@ def set_color_cluster( structfile, cluster , mdata ):
 def use_upload( selection , demostr, mol_style, color_style, mt, custom_colors  ):
     print(selection)
     fname = demostr
-
     copy2(demostr, './str.pdb')
     fname = './str.pdb'
     # Create the model data from the decoded contents
