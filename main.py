@@ -542,10 +542,6 @@ def use_upload( selection , demostr, mol_style, color_style, mt, custom_colors  
     copy2(demostr, './str.pdb')
     fname = './str.pdb'
     # Create the model data from the decoded contents
-
-    with open( 'tmp.pdb' , 'w' ) as tempfileout:
-        tempfileout.write('blah')
-
     print(custom_colors)
     modata = parser.create_data(fname)
     fmodel = files_data_style(modata)
@@ -556,7 +552,6 @@ def use_upload( selection , demostr, mol_style, color_style, mt, custom_colors  
     fstyle = files_data_style(datstyle)
     with open(fstyle) as sf:
         data_style = json.load(sf)
-
     print('selection finish' , selection)
     data_style = [ {'color': 'blue', 'visualization_type': 'cartoon'}  if i not in selection else  {'color': 'yellow', 'visualization_type': 'cartoon'}  for i,atom in enumerate(data_style) ]
 
